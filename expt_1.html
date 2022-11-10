@@ -1,0 +1,57 @@
+<html>
+
+<body>
+	<h1>Area of Different shapes</h1>
+	<h5> Vaishnavi Avhad</h5>
+	<h5> Roll No: 42406 <h5>
+	<h5> ABC ID: 802576165764 <h5>
+
+	<h3 style="color:blue">Rectangle Area Calculation</h3>
+	length= <input type="number" id="length">
+	<br>
+	breadth= <input type="number" id="breadth">
+	<br>
+	<button style="background:pink" onclick="rectangle()">Calculate</button>
+	<br>
+	Area=<h4 id="area_rectangle"></h4>
+
+	<h3 style="color:blue">Circle Area Calculation</h3>
+	radius= <input type="number" id="radius">
+	<br>
+	<br>
+	<button style="background:pink" onclick="circle()">Calculate</button>
+	<br>
+	Area=<h4 id="area_circle"> </h4>
+
+	<h3 style="color:blue">Triangle Area Calculation</h3>
+	Side A= <input type="number" id="sidea"><br>
+	Side B= <input type="number" id="sideb"><br>
+	Side C= <input type="number" id="sidec">
+	<br>
+	<br>
+	<button style="background:pink" onclick="triangle()">Calculate</button>
+	<br>
+	Area=<h4 id="area_triangle"></h4>
+
+
+	<script>
+		function rectangle() {
+			var len = parseInt(document.getElementById("length").value);
+			var bre = parseInt(document.getElementById("breadth").value);
+			document.getElementById("area_rectangle").innerHTML = len * bre;
+		}
+		function circle() {
+			var rad = parseInt(document.getElementById("radius").value);
+			document.getElementById("area_circle").innerHTML = Math.PI * rad * rad;
+		}
+		function triangle() {
+			var a = parseInt(document.getElementById("sidea").value);
+			var b = parseInt(document.getElementById("sideb").value);
+			var c = parseInt(document.getElementById("sidec").value);
+			const s = (a + b + c) / 2;
+			document.getElementById("area_triangle").innerHTML = (Math.sqrt(s * (s - a) * (s - b) * (s - c)));
+		}
+	</script>
+</body>
+
+</html>

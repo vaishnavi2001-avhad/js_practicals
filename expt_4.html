@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp_4</title>
+</head>
+
+<body>
+     <h5> Name: Vaishnavi Avhad</h5>
+    <h5> Roll no: 42406 </h5>
+    <h5> ABC ID: 802576165764</h5>
+    <h5>Batch:P8 </h5>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <button onclick="compair()">Go</button>
+    <h1>Strict Equality Operator </h1>
+    <span id="z"></span>
+    <h1>Length </h1>
+    <span id="y"></span>
+    <h1>Alphabetic Order</h1>
+    <span id="x"></span>
+
+    <br>
+    <script>
+        function compair() {
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            document.getElementById('z').innerText = a === b ? true : false;
+            document.getElementById('y').innerText = (a.length == b.length) ? true : false;
+            let c = a.localeCompare(b);
+            document.getElementById('x').innerText = c;
+        }
+    </script>
+</body>
+
+</html>

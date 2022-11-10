@@ -1,0 +1,59 @@
+<html>
+
+<body>
+    <h1>String Operations</h1>
+    <h5> Name: Vaishnavi Avhad</h5>
+    <h5> Roll no: 42406 </h5>
+    <h5> ABC ID: 802576165764</h5>
+    <h5>Batch:P8 </h5>
+    <br><br>
+    string = <input type="text" id="input"><br><br>
+    <button style="background:pink" onclick="set_string()">Perform Operations</button>
+
+    <br>
+    String = <p id="string"></p>
+
+    <br>
+    Reverse String = <p id="reverse"></p>
+
+    <br>
+    Plaindrome Check = <p id="palindrome"></p>
+
+    <br>
+    Index position to replace character= <input type="number" id="change_index"><br>
+    Character to replace at above index position= <input type="text" id="change_char"><br><br>
+    <button style="background:pink" onclick="replace()">Replace Char</button>
+    <br>
+    updated string =><p id="updated_string"></p>
+    <script>
+        function set_string() {
+            var st = document.getElementById("input").value;
+            document.getElementById("string").innerHTML = st;
+            rev(st);
+        }
+        function rev(s) {
+            const arrayStrings = s.split("");
+            const reverseArray = arrayStrings.reverse();
+            const joinArray = reverseArray.join("");
+            document.getElementById("reverse").innerHTML = joinArray;
+            palin(s, joinArray);
+        }
+        function palin(s, re) {
+            if (s == re) {
+                document.getElementById("palindrome").innerHTML = "Is Palindrome";
+            }
+            else {
+                document.getElementById("palindrome").innerHTML = "Not Palindrome";
+            }
+        }
+        function replace() {
+            var s = document.getElementById("input").value;
+            var i = parseInt(document.getElementById("change_index").value);
+            var c = document.getElementById("change_char").value;
+            var r = s.substring(0, i) + c + s.substring(i + 1);
+            document.getElementById("updated_string").innerHTML = r;
+        }
+    </script>
+</body>
+
+</html>

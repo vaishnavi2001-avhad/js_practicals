@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <title>Assignment 9</title>
+    <script>
+        function validate() {
+            if (document.StudentRegistration.textnames.value == "") {
+                alert("Please provide your Name!");
+                document.StudentRegistration.textnames.focus();
+                return false;
+            }
+            if (document.StudentRegistration.city.value == "") {
+                alert("Please provide the name of the city !");
+                document.StudentRegistration.city.focus();
+                return false;
+            }
+            if (document.StudentRegistration.State.value == "") {
+                alert("Please provide the name of the state!");
+                document.StudentRegistration.State.focus();
+                return false;
+            }
+            if (!(document.StudentRegistration.Gender.value != "Male" ||
+                document.StudentRegistration.Gender.value != "Female" ||
+                document.StudentRegistration.Gender.value != "female" ||
+                document.StudentRegistration.Gender.value != "male")) {
+                alert("Please provide valid gender!");
+                document.StudentRegistration.Gender.focus();
+                return false;
+            }
+            if (document.StudentRegistration.Address.value == "") {
+                alert("Please provide your address!");
+                document.StudentRegistration.Address.focus();
+                return false;
+            }
+            var email = document.StudentRegistration.emailid.value;
+            atpos = email.indexOf("@");
+            dotpos = email.lastIndexOf(".");
+            var idx = email.indexOf('@gmail.com');
+            if (idx > -1) {
+                // true if the address contains yahoo.com
+                if (email == "" || atpos < 1 || (dotpos - atpos < 2)) {
+                    alert("Please enter correct email ID")
+                    document.StudentRegistration.emailid.focus();
+                    return false;
+                }
+                if (document.StudentRegistration.mobileno.value == "" ||
+                    isNaN(document.StudentRegistration.mobileno.value) ||
+                    document.StudentRegistration.mobileno.value.length != 10) {
+                    alert("Please provide a Mobile No in the format 123.");
+                    document.StudentRegistration.mobileno.focus();
+                    return false;
+                }
+                alert("Entered Details Updated Successfully !!!!")
+                return (true);
+            }
+            else {
+                alert("Please enter correct email ID with gmail domain only")
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+    <h3>Experiment No 9</h3>
+    <h3></h3>
+    <div>Name: Vaishnavi Avhad <br> Roll No: 42406 <br>ABC ID:802-576-165-764 <br> Class: BE-08
+        <br>
+        Batch: P8 <br>
+    </div>
+    <hr>
+    <div class="container">
+        <form action="#" name="StudentRegistration" onsubmit="return(validate());">
+            <br>
+            <div>
+                <tr>
+                    <td>Name</td>
+                    <td><input type=text name=textnames id="textname" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>EmailId(Enter address with gmail only)</td>
+                    <td><input type="text" name="emailid" id="emailid" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>MobileNo</td>
+                    <td><input type="text" name="mobileno" id="mobileno" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>City</td>
+                    <td><input type="text" name="city" id="city" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>State</td>
+                    <td><input type="text" name="State" id="State" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="text" name="Gender" id="Gender" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="Address" id="Address" size="30"></td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td><input type="reset"></td>
+                    <td colspan="2"><input type="submit" value="Submit Form" /></td>
+                </tr>
+            </div>
+        </form>
+    </div>
+    <hr>
+</body>
+
+</html>
